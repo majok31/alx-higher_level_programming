@@ -1,5 +1,4 @@
-
-#!/bin/usr/python3
+# !/bin/usr/python3
 """
 Rectangle module
 """
@@ -143,7 +142,7 @@ class Rectangle(Base):
                     self.y = arg
                 else:
                     break
-                
+
         elif len(kwargs) > 0:
             for key, value in kwargs.items():
                 if key == "id":
@@ -156,8 +155,8 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
-                # removed the break statement, incase if the passed args are greater
-                # than 5, and one of the attributes is at the end
+    # removed the break statement, incase if the passed args are greater
+    # than 5, and one of the attributes is at the end
 
     def to_dictionary(self):
         """
@@ -176,4 +175,3 @@ class Rectangle(Base):
 
 if __name__ == "__main__":
     pass
-

@@ -1,5 +1,5 @@
 
-#!/usr/bin/python3
+# !/usr/bin/python3
 """
 Defines a square class.
 """
@@ -41,7 +41,7 @@ class Square(Rectangle):
                     self.x = arg
                 elif count == 3:
                     self.y = arg
-                else: continue
+                else continue
 
         elif len(kwargs) > 0:
             for key, value in kwargs.items():
@@ -53,7 +53,7 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
-                # removed the break statement, incase if the passed args are greater
+    # removed the break statement, incase if the passed args are greater
                 # than 5, and one of the attributes is at the end
 
     def to_dictionary(self):
@@ -71,4 +71,3 @@ class Square(Rectangle):
         """Return the print() and str() representation of a Square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
-
