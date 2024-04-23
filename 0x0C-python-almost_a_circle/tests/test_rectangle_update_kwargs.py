@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 408adfd82ac5fad4e2d58c06b79cd4e4392cc8f3
 #!/usr/bin/python3
 
 """Defines unittests for models/rectangle.py."""
@@ -121,3 +125,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+<<<<<<< HEAD
+=======
+
+>>>>>>> 408adfd82ac5fad4e2d58c06b79cd4e4392cc8f3
