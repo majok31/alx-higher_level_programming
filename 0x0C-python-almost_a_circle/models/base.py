@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 """
 Defines a base model class.
 """
@@ -6,19 +6,18 @@ import json
 import csv
 import turtle
 
-
 class Base:
     """
     Represents the base model
     """
     __nb_objects = 0
-
     def __init__(self, id=None):
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -94,6 +93,7 @@ class Base:
         """
         Write the CSV serialization of a list of objects to a file.
         """
+        # corrected the name of the file extension from .json to .csv
         file_name = "{}.csv".format(cls.__name__)
 
         with open(file_name, "w") as csvfile:
@@ -106,23 +106,24 @@ class Base:
                     field_names = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(csvfile, fieldnames=field_names)
 
-                for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+            for obj in list_objs:
+                writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
         """
         Return a list of classes instantiated from a CSV file.
         """
+        # corrected the name of the file extension from .json to .csv
         file_name = "{}.csv".format(cls.__name__)
-
+        
         try:
             with open(file_name, "r") as csvfile:
                 if cls.__name__ == "Rectangle":
-                    fieldnames = ["id", "width", "height", "x", "y"]
+                    filednames = ["id", "width", "height", "x", "y"]
                 else:
-                    fieldnames = ["id", "size", "x", "y"]
-                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
+                    filednames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, fieldnames=filednames)
 
                 new_list_dict = []
 
@@ -179,6 +180,7 @@ class Base:
 
             turt.hideturtle()
 
+
         turt.color("#FFFF00")
 
         for sq in list_squares:
@@ -201,8 +203,6 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-
-
 if __name__ == "__main__":
 
     pass
