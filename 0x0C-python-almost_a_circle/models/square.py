@@ -1,11 +1,3 @@
-
-# !/usr/bin/python3
-"""
-Defines a square class.
-"""
-from models.rectangle import Rectangle
-
-
 class Square(Rectangle):
     """
     Represent a square.
@@ -31,7 +23,7 @@ class Square(Rectangle):
         """
         Update the Square.
         """
-        if args and len(args) != 0:
+        if args:
             for count, arg in enumerate(args):
                 if count == 0:
                     self.id = arg
@@ -41,9 +33,7 @@ class Square(Rectangle):
                     self.x = arg
                 elif count == 3:
                     self.y = arg
-                else continue
-
-        elif len(kwargs) > 0:
+        elif kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
@@ -53,19 +43,15 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
-        # removed the break statement, incase if the passed args are greater
-        # than 5, and one of the attributes is at the end
 
     def to_dictionary(self):
         """Return the dictionary representation of the Square."""
-        square_dict = {
+        return {
             "id": self.id,
             "size": self.width,
             "x": self.x,
             "y": self.y
         }
-
-        return square_dict
 
     def __str__(self):
         """Return the print() and str() representation of a Square."""
